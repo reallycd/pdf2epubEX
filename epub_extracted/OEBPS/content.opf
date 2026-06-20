@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" prefix="rendition: http://www.idpf.org/vocab/rendition/#" unique-identifier="pub-id" version="3.0">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:identifier id="pub-id">None</dc:identifier>
+    <dc:title>None</dc:title>
+    <dc:creator>刘俊</dc:creator>
+    <dc:publisher>None</dc:publisher>
+    <dc:language>en</dc:language>
+    <dc:subject>None</dc:subject>
+    <dc:date>1900</dc:date>
+    <dc:description>PDF: 现代家政人才培养方案.pdf, 8.27 inches x 11.69 inches, 21.0 cm x 29.7 cm - ePub: 150 dpi, jpg - Software: pdf2htmlEX 0.18.8.rc2, pdf2epubEX/Eric Dodemont</dc:description>
+    <meta name="cover" content="cover-image"/>
+    <meta property="dcterms:modified">2026-06-20T04:44:10Z</meta>
+    <meta property="rendition:layout">pre-paginated</meta>
+    <meta property="rendition:spread">auto</meta>
+  </metadata>
+  <manifest>
+    <item id="mybook0001" href="mybook0001.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0002" href="mybook0002.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0003" href="mybook0003.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0004" href="mybook0004.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0005" href="mybook0005.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0006" href="mybook0006.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0007" href="mybook0007.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0008" href="mybook0008.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0009" href="mybook0009.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0010" href="mybook0010.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0011" href="mybook0011.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0012" href="mybook0012.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0013" href="mybook0013.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0014" href="mybook0014.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0015" href="mybook0015.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0016" href="mybook0016.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0017" href="mybook0017.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0018" href="mybook0018.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0019" href="mybook0019.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0020" href="mybook0020.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0021" href="mybook0021.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0022" href="mybook0022.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0023" href="mybook0023.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0024" href="mybook0024.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0025" href="mybook0025.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0026" href="mybook0026.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0027" href="mybook0027.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0028" href="mybook0028.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0029" href="mybook0029.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0030" href="mybook0030.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0031" href="mybook0031.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0032" href="mybook0032.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0033" href="mybook0033.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0034" href="mybook0034.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0035" href="mybook0035.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0036" href="mybook0036.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0037" href="mybook0037.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0038" href="mybook0038.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0039" href="mybook0039.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0040" href="mybook0040.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0041" href="mybook0041.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0042" href="mybook0042.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0043" href="mybook0043.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0044" href="mybook0044.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0045" href="mybook0045.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0046" href="mybook0046.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0047" href="mybook0047.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0048" href="mybook0048.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0049" href="mybook0049.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0050" href="mybook0050.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0051" href="mybook0051.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0052" href="mybook0052.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0053" href="mybook0053.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0054" href="mybook0054.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0055" href="mybook0055.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0056" href="mybook0056.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0057" href="mybook0057.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0058" href="mybook0058.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0059" href="mybook0059.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0060" href="mybook0060.xhtml" media-type="application/xhtml+xml"/>
+    <item id="mybook0061" href="mybook0061.xhtml" media-type="application/xhtml+xml"/>
+    <item id="bg1" href="bg1.jpg" media-type="image/jpeg"/>
+    <item id="bg10" href="bg10.jpg" media-type="image/jpeg"/>
+    <item id="bg11" href="bg11.jpg" media-type="image/jpeg"/>
+    <item id="bg12" href="bg12.jpg" media-type="image/jpeg"/>
+    <item id="bg13" href="bg13.jpg" media-type="image/jpeg"/>
+    <item id="bg14" href="bg14.jpg" media-type="image/jpeg"/>
+    <item id="bg15" href="bg15.jpg" media-type="image/jpeg"/>
+    <item id="bg16" href="bg16.jpg" media-type="image/jpeg"/>
+    <item id="bg17" href="bg17.jpg" media-type="image/jpeg"/>
+    <item id="bg18" href="bg18.jpg" media-type="image/jpeg"/>
+    <item id="bg19" href="bg19.jpg" media-type="image/jpeg"/>
+    <item id="bg1a" href="bg1a.jpg" media-type="image/jpeg"/>
+    <item id="bg1b" href="bg1b.jpg" media-type="image/jpeg"/>
+    <item id="bg1c" href="bg1c.jpg" media-type="image/jpeg"/>
+    <item id="bg1d" href="bg1d.jpg" media-type="image/jpeg"/>
+    <item id="bg1e" href="bg1e.jpg" media-type="image/jpeg"/>
+    <item id="bg1f" href="bg1f.jpg" media-type="image/jpeg"/>
+    <item id="bg2" href="bg2.jpg" media-type="image/jpeg"/>
+    <item id="bg20" href="bg20.jpg" media-type="image/jpeg"/>
+    <item id="bg21" href="bg21.jpg" media-type="image/jpeg"/>
+    <item id="bg22" href="bg22.jpg" media-type="image/jpeg"/>
+    <item id="bg23" href="bg23.jpg" media-type="image/jpeg"/>
+    <item id="bg24" href="bg24.jpg" media-type="image/jpeg"/>
+    <item id="bg25" href="bg25.jpg" media-type="image/jpeg"/>
+    <item id="bg26" href="bg26.jpg" media-type="image/jpeg"/>
+    <item id="bg27" href="bg27.jpg" media-type="image/jpeg"/>
+    <item id="bg28" href="bg28.jpg" media-type="image/jpeg"/>
+    <item id="bg29" href="bg29.jpg" media-type="image/jpeg"/>
+    <item id="bg2a" href="bg2a.jpg" media-type="image/jpeg"/>
+    <item id="bg2b" href="bg2b.jpg" media-type="image/jpeg"/>
+    <item id="bg2c" href="bg2c.jpg" media-type="image/jpeg"/>
+    <item id="bg2d" href="bg2d.jpg" media-type="image/jpeg"/>
+    <item id="bg2e" href="bg2e.jpg" media-type="image/jpeg"/>
+    <item id="bg2f" href="bg2f.jpg" media-type="image/jpeg"/>
+    <item id="bg3" href="bg3.jpg" media-type="image/jpeg"/>
+    <item id="bg30" href="bg30.jpg" media-type="image/jpeg"/>
+    <item id="bg31" href="bg31.jpg" media-type="image/jpeg"/>
+    <item id="bg32" href="bg32.jpg" media-type="image/jpeg"/>
+    <item id="bg33" href="bg33.jpg" media-type="image/jpeg"/>
+    <item id="bg34" href="bg34.jpg" media-type="image/jpeg"/>
+    <item id="bg35" href="bg35.jpg" media-type="image/jpeg"/>
+    <item id="bg36" href="bg36.jpg" media-type="image/jpeg"/>
+    <item id="bg37" href="bg37.jpg" media-type="image/jpeg"/>
+    <item id="bg38" href="bg38.jpg" media-type="image/jpeg"/>
+    <item id="bg39" href="bg39.jpg" media-type="image/jpeg"/>
+    <item id="bg3a" href="bg3a.jpg" media-type="image/jpeg"/>
+    <item id="bg3b" href="bg3b.jpg" media-type="image/jpeg"/>
+    <item id="bg3c" href="bg3c.jpg" media-type="image/jpeg"/>
+    <item id="bg3d" href="bg3d.jpg" media-type="image/jpeg"/>
+    <item id="bg4" href="bg4.jpg" media-type="image/jpeg"/>
+    <item id="bg5" href="bg5.jpg" media-type="image/jpeg"/>
+    <item id="bg6" href="bg6.jpg" media-type="image/jpeg"/>
+    <item id="bg7" href="bg7.jpg" media-type="image/jpeg"/>
+    <item id="bg8" href="bg8.jpg" media-type="image/jpeg"/>
+    <item id="bg9" href="bg9.jpg" media-type="image/jpeg"/>
+    <item id="bga" href="bga.jpg" media-type="image/jpeg"/>
+    <item id="bgb" href="bgb.jpg" media-type="image/jpeg"/>
+    <item id="bgc" href="bgc.jpg" media-type="image/jpeg"/>
+    <item id="bgd" href="bgd.jpg" media-type="image/jpeg"/>
+    <item id="bge" href="bge.jpg" media-type="image/jpeg"/>
+    <item id="bgf" href="bgf.jpg" media-type="image/jpeg"/>
+    <item id="f1" href="f1.woff" media-type="application/font-woff"/>
+    <item id="f2" href="f2.woff" media-type="application/font-woff"/>
+    <item id="f3" href="f3.woff" media-type="application/font-woff"/>
+    <item id="f4" href="f4.woff" media-type="application/font-woff"/>
+    <item id="f5" href="f5.woff" media-type="application/font-woff"/>
+    <item id="f6" href="f6.woff" media-type="application/font-woff"/>
+    <item id="f7" href="f7.woff" media-type="application/font-woff"/>
+    <item id="f8" href="f8.woff" media-type="application/font-woff"/>
+    <item id="f9" href="f9.woff" media-type="application/font-woff"/>
+    <item id="fa" href="fa.woff" media-type="application/font-woff"/>
+    <item id="fb" href="fb.woff" media-type="application/font-woff"/>
+    <item id="fc" href="fc.woff" media-type="application/font-woff"/>
+    <item id="fd" href="fd.woff" media-type="application/font-woff"/>
+    <item id="fe" href="fe.woff" media-type="application/font-woff"/>
+    <item id="base-min-css" href="base.min.css" media-type="text/css"/>
+    <item id="mybook-css" href="mybook.css" media-type="text/css"/>
+    <item id="cover-image" href="cover.png" media-type="image/png" properties="cover-image"/>
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+  </manifest>
+  <spine>
+    <itemref idref="mybook0001" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0002" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0003" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0004" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0005" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0006" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0007" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0008" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0009" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0010" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0011" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0012" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0013" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0014" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0015" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0016" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0017" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0018" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0019" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0020" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0021" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0022" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0023" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0024" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0025" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0026" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0027" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0028" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0029" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0030" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0031" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0032" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0033" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0034" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0035" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0036" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0037" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0038" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0039" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0040" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0041" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0042" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0043" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0044" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0045" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0046" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0047" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0048" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0049" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0050" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0051" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0052" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0053" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0054" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0055" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0056" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0057" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0058" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0059" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0060" properties="rendition:layout-pre-paginated"/>
+    <itemref idref="mybook0061" properties="rendition:layout-pre-paginated"/>
+  </spine>
+  <guide>
+    <reference type="cover" title="Cover" href="mybook0001.xhtml"/>
+    <reference type="text" title="Text" href="mybook0002.xhtml"/>
+  </guide>
+</package>
