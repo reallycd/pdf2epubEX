@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Mac OS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Project Specific
+paddle_epub_work/
+*.pdf.json
+*.epub
+output/
+*.pdf
+
+# PaddleOCR Tooling
+paddle_epub_work_*/
+.venv/
+debug_api_error.json
+debug_last_response.json
+.env
