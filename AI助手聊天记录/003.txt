@@ -1,0 +1,25 @@
+查看仓库 README 以确认正确的 Docker 运行方式。
+
+Read [](file:///workspaces/pdf2epubEX/README.md#1-1), lines 1 to 200
+
+Read [](file:///workspaces/pdf2epubEX)
+
+你的项目里已有 PDF 文件：现代家政人才培养方案.pdf
+
+如果你在当前仓库根目录运行 Docker，可以用：
+
+```bash
+docker run -ti --rm -v /workspaces/pdf2epubEX:/temp dodeeric/pdf2epubex pdf2epubEX 现代家政人才培养方案.pdf
+```
+
+如果你在 Windows 上，并且项目在 `C:\Users\Eric\Documents\...` 下，请把实际路径替换进去，例如：
+
+```bash
+docker run -ti --rm -v /c/Users/Eric/Documents/pdf2epubEX:/temp dodeeric/pdf2epubex pdf2epubEX 现代家政人才培养方案.pdf
+```
+
+如果你想直接在项目目录里运行，也可以使用：
+
+```bash
+docker run -ti --rm -v "$(pwd)":/temp dodeeric/pdf2epubex pdf2epubEX 现代家政人才培养方案.pdf
+```

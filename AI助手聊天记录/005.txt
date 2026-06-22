@@ -1,0 +1,67 @@
+## 已遇到的问题总结
+
+### 1. 项目入口和目录混淆
+- 这个仓库里有两个不同的工具集：
+  - pdf2epub 目录下是 Python 项目（main.py + `modules/pdf2md.py` + `modules/mark2epub.py`）
+  - 根目录下有一个旧版 shell 脚本 pdf2epubEX 和 `pdf2htmlex` Debian 包
+- 我最初在 pdf2epub 目录内工作，结果没马上注意到真正的根目录里也有可用的转换工具和目标 PDF。
+
+### 2. Python 方案依赖问题
+- requirements.txt 中使用了 `marker-pdf==1.10.2`
+- `marker` 可以成功导入，但初始化 `PdfConverter` 时进程被直接终止（退出码 143）
+- 这表明当前环境在加载 `marker` 模型时被系统杀掉了，最可能是资源不足（模型加载太重、内存或进程限制）
+
+### 3. `marker` 内部实现检查
+- 读取了 `marker.models.create_model_dict`，发现它会构建 `FoundationPredictor`，并依赖 `surya.settings` 的大模型 checkpoint
+- 也读取了 `marker/converters/pdf.py`，确认默认处理器里包含大量 LLM 处理器
+- 结论：这个 Python 路径在当前 CPU 环境下很可能并不可靠，因为 `marker` 需要下载/加载大模型并进行深度推理
+
+### 4. shell 脚本方案的可行性
+- 根目录包含 pdf2epubEX shell 脚本和 pdf2htmlex_0.14.6+ds-2build1_amd64-ubuntu-xenial.deb
+- 这个方案本质上是依赖 `pdf2htmlEX` 将 PDF 转成固定布局 HTML，再打包成 ePub
+- 这是一个更轻量、更实际的路径，但需要安装 `pdf2htmlEX` 及其系统库依赖
+
+### 5. 安装 `pdf2htmlEX` 时遇到的问题
+- 先尝试使用 `apt-get install ./xxx.deb` 失败，原因是当前目录不在根目录
+- 之后又直接用 `dpkg -i` 安装 `pdf2htmlex` 包
+- `dpkg` 安装失败，报依赖缺失：
+  - `libfontforge1`
+  - `libpoppler58`
+  - `pdf.js-common`
+- 这些依赖在 Ubuntu 24.04 上的包名已经不一致，导致无法直接安装老旧 `.deb`
+
+### 6. 进一步检查二进制可行性
+- 解包 `.deb` 后发现 `usr/bin/pdf2htmlEX` 的共享库缺失：
+  - `libpoppler.so.58`
+  - `libfontforge.so.1`
+- 说明即使提取二进制，也仍然需要满足特定版本的系统库，当前环境还没准备好
+
+## 我尝试的解决思路
+
+1. 先验证 Python 项目能否运行
+   - 读取 main.py
+   - 读取 pdf2md.py 和 mark2epub.py
+   - 尝试直接实例化 `marker` 的模型和转换器
+
+2. 诊断 `marker` 失败原因
+   - 检查 `marker.models`、`surya.settings`
+   - 发现依赖大模型 checkpoint 和深度学习推理路径
+
+3. 转向旧版 shell 工具
+   - 识别根目录里的 pdf2epubEX 和 `pdf2htmlex` 包
+   - 尝试安装 `pdf2htmlEX`
+   - 发现依赖版本不匹配问题
+
+4. 评估当前最佳路径
+   - Python 方案对于当前容器资源很可能不可行
+   - Shell 方案理论上更稳，但需要解决库依赖版本问题
+   - 另外还有“使用 Docker 镜像运行已打包工具”的潜在方式，但当前并未执行
+
+## 目前的结论
+
+- 当前最直接的可行尝试不是继续盲目调用 main.py
+- 应该先解决 `pdf2htmlEX` 的系统依赖，或者改用更适合当前环境的转换流程
+- 如果你要我继续，我可以继续：
+  1. 进一步修复 `pdf2htmlEX` 的依赖安装；
+  2. 或者改写 Python 方案，避开 `marker` 的重量级模型；
+  3. 也可以直接用 Docker 镜像运行已有 root 脚本，绕开本地依赖问题。

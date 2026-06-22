@@ -1,0 +1,208 @@
+我来详细分析这个 pdf2epubEX 脚本的实现，特别是关于加粗文本的处理。 
+
+Read memory
+
+## 代码整体架构分析
+
+### **核心转换流程**
+
+这个脚本将PDF转换为ePub的流程分为三个阶段：
+
+1. **PDF信息提取阶段**
+   ```bash
+   pdfinfo $1              # 获取PDF元数据（标题、作者）
+   pdffonts $1             # 获取PDF中的字体信息
+   ```
+
+2. **PDF → HTML转换阶段**（关键步骤）
+   ```bash
+   pdf2htmlEX --embed-css 0 --embed-font 0 --embed-image 0 \
+              --split-pages 1 --bg-format $imgformat \
+              --dpi $dpi --fit-width $hres --fit-height $vres \
+              --page-filename mybook%04d.page \
+              --css-filename mybook.css mybook.pdf
+   ```
+
+3. **HTML → ePub打包阶段**
+   创建ePub的标准目录结构并压缩
+
+---
+
+### **加粗文本处理方式** 🔑
+
+这个脚本对加粗文本的处理是 **间接的**，通过以下方式实现：
+
+#### 1️⃣ **核心工具：pdf2htmlEX**
+- 脚本依赖 `pdf2htmlEX` 工具将PDF转换为HTML
+- `pdf2htmlEX` 会自动检测PDF中的文本格式信息，包括：
+  - **加粗** → 转换为CSS `font-weight: bold` 或 HTML `<b>` 标签
+  - **斜体** → `font-style: italic`
+  - **字体** → 保留或转换相应的字体
+
+#### 2️⃣ **CSS样式处理**
+```bash
+# 脚本保留pdf2htmlEX生成的CSS文件
+mv *.css ./bookroot/OEBPS/
+# 这个CSS文件包含所有格式信息
+```
+
+生成的 `mybook.css` 会包含类似的样式：
+```css
+/* pdf2htmlEX转换后的样式示例 */
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+```
+
+#### 3️⃣ **特殊处理**
+```bash
+# 移除某些不兼容的CSS属性
+sed -i 's/;unicode-bidi:bidi-override//g' base.min.css
+```
+
+---
+
+### **转换流程图**
+
+```
+PDF文件
+  ↓
+pdfinfo/pdffonts (获取元数据)
+  ↓
+pdf2htmlEX (关键转换步骤)
+  ↓ 转换为HTML页面 + CSS样式表
+  ├─ mybook0001.xhtml (包含加粗等格式信息)
+  ├─ mybook0002.xhtml
+  ├─ mybook.css (包含 font-weight: bold 等样式)
+  └─ 字体文件 (*.woff)
+  ↓
+生成cover.png (使用pdftoppm)
+  ↓
+创建ePub结构
+  ├─ mimetype
+  ├─ META-INF/container.xml
+  ├─ OEBPS/content.opf (包含manifest和spine)
+  ├─ OEBPS/nav.xhtml (目录)
+  └─ 页面、样式、字体、图片
+  ↓
+zip压缩
+  ↓
+生成最终的 .epub 文件
+```
+
+---
+
+### **关键发现**
+
+| 方面 | 处理方式 |
+|------|---------|
+| **加粗文本** | 由 `pdf2htmlEX` 自动检测，转换为HTML中的 `<span>` 标签 + CSS `font-weight` |
+| **字体保留** | 通过 `--embed-font 0` 表示不内嵌字体，仅生成 .woff 引用 |
+| **格式准确度** | 依赖 `pdf2htmlEX` 的版本和算法（脚本特别检查了版本 0.14.6）|
+| **最终格式** | 固定布局ePub (`rendition:layout-pre-paginated`)，最大化保留原PDF格式 |
+
+**总结**：这个脚本并不直接处理加粗，而是依赖 `pdf2htmlEX` 工具的文本识别能力，该工具会将PDF中的加粗文本转换为带有相应CSS样式的HTML元素。
+
+Read [](file:///workspaces/pdf2epubEX)
+
+Ran terminal command:  unzip -q "现代家政人才培养方案-150dpi-jpg.epub" -d epub_extracted
+
+Ran terminal command:  cd /workspaces/pdf2epubEX/epub_extracted && find . -type f | head -20
+
+Ran terminal command:  cd /workspaces/pdf2epubEX/epub_extracted && ls -la OEBPS/*.css
+
+Read [](file:///workspaces/pdf2epubEX/epub_extracted/OEBPS/mybook.css#1-1), lines 1 to 100
+
+Ran terminal command:  cd /workspaces/pdf2epubEX/epub_extracted && head -100 OEBPS/mybook0003.xhtml
+
+Read [](file:///workspaces/pdf2epubEX/epub_extracted/OEBPS/mybook0003.xhtml)
+
+Ran terminal command:  cd /workspaces/pdf2epubEX/epub_extracted && grep -i "font-weight\|bold" OEBPS/*.css
+
+Ran terminal command:  pdffonts "/workspaces/pdf2epubEX/现代家政人才培养方案.pdf" | head -30
+
+Ran terminal command:  pdfinfo "现代家政人才培养方案.pdf" | head -20
+
+Ran terminal command:  ls -la *.pdf
+
+Ran terminal command:  pwd && find . -name "*.pdf" -type f
+
+Ran terminal command:  cd .. && find . -maxdepth 1 -name "*.pdf" -type f
+
+Ran terminal command:  cd /workspaces/pdf2epubEX/epub_extracted && grep -o 'class="[^"]*ff[a-f0-9]' OEBPS/mybook*.xhtml | sort | uniq -c | sort -rn | head -20
+
+Created memory file [](file:///home/codespace/.vscode-remote/data/User/workspaceStorage/-19a81b32/GitHub.copilot-chat/memory-tool/memories/ODZiN2ZlM2QtYTcwNC00NzExLWJjYzQtZWY4MmE3YzhlM2Ix/pdf2epub_bold_analysis.md)
+
+## 详细分析结果 🔍
+
+我已经详细研究了生成的ePub文件和原始PDF，找到了**加粗文本丢失的根本原因**：
+
+### **问题诊断**
+
+#### 1️⃣ **PDF中的字体结构**
+PDF文件中包含的字体列表：
+- ✅ `MicrosoftYaHei` - 普通文本字体
+- ✅ `MicrosoftYaHei-Bold` - **单独的粗体字体**
+- ✅ `SimHei`、`SimSun`、`FangSong` 等
+
+**关键点**：PDF通过使用**不同的字体文件**来表现文本样式，而不是使用CSS的 `font-weight` 属性。
+
+#### 2️⃣ **ePub中的CSS样式分析**
+生成的ePub文件中的所有字体定义：
+
+```css
+.ff1 { font-family:ff1; font-weight:normal; ... }
+.ff2 { font-family:ff2; font-weight:normal; ... }
+.ff3 { font-family:ff3; font-weight:normal; ... }
+.ff4 { font-family:ff4; font-weight:normal; ... }
+.ff5 { font-family:ff5; font-weight:normal; ... }
+...
+.ffe { font-family:ffe; font-weight:normal; ... }
+```
+
+**问题**：**所有字体类都被设置为 `font-weight:normal`**，没有任何 `font-weight:bold` 的声明。
+
+### **根本原因** 💡
+
+```
+PDF处理链：
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+粗体文本     → 使用"MicrosoftYaHei-Bold"字体
+              ↓
+          pdf2htmlEX转换
+              ↓
+          HTML <span class="ff5">...</span>
+              ↓
+          CSS: .ff5 { font-weight:normal; }
+              ↓
+          ❌ 加粗信息丢失！
+```
+
+### **为什么会丢失？**
+
+1. **字体名称识别失败**
+   - `pdf2htmlEX` 不会解析字体名称中的 `-Bold` 后缀
+   - 它只是将字体文件转换为CSS类
+
+2. **无法从字体文件推断样式**
+   - 虽然 `MicrosoftYaHei-Bold` 是粗体字体文件
+   - 但 `pdf2htmlEX` 不能自动检测并设置 `font-weight:bold`
+
+3. **固定布局转换方式**
+   - pdf2epubEX 脚本使用固定布局ePub
+   - 主要目的是保留PDF的页面布局，而非提取文本语义
+
+### **转换流程中的关键参数**
+```bash
+pdf2htmlEX --embed-font 0 \           # 不内嵌字体
+           --dpi 150 \
+           --split-pages 1 \          # 分页处理
+           mybook.pdf
+```
+
+参数 `--embed-font 0` 表示不直接嵌入字体，而是通过 `@font-face` 引用，但这个过程中丢失了样式信息。
+
+### **结论**
+
+这是 `pdf2htmlEX` 工具的**设计限制**：
+- 它将PDF字体映射到CSS类，但不处理字体权重（bold/normal）的区分
+- 对于中文文档（使用字体变体表现样式），这个限制尤其明显
